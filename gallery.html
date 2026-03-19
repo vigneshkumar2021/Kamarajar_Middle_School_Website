@@ -60,19 +60,26 @@
 
         /* Masonry Grid */
         .gallery-masonry {
-            columns: 1;
-            column-gap: 1.5rem;
+            columns: 2;
+            column-gap: 0.75rem;
         }
 
-        @media (min-width: 768px) { .gallery-masonry { columns: 2; } }
+        @media (max-width: 480px) { 
+            .gallery-masonry { columns: 1; column-gap: 1rem; } 
+        }
+        @media (min-width: 768px) { .gallery-masonry { columns: 2; column-gap: 1.5rem; } }
         @media (min-width: 1024px) { .gallery-masonry { columns: 3; } }
         @media (min-width: 1280px) { .gallery-masonry { columns: 4; } }
 
         .gallery-item-wrapper {
             break-inside: avoid;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.75rem;
             display: block;
             transition: all 0.5s ease;
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item-wrapper { margin-bottom: 1rem; }
         }
 
         .gallery-item {
@@ -341,13 +348,12 @@
         </div>
     </section>
 
-    <!-- Main Gallery Grid -->
-    <section class="py-16">
-        <div class="container mx-auto px-4">
+    <section class="py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
             <div class="gallery-masonry" id="gallery-grid">
                 
                 <!-- Campus -->
-                <div class="gallery-item-wrapper" data-category="campus" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="campus">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/school front view.jpeg" alt="School Entrance">
                         <div class="gallery-overlay">
@@ -357,7 +363,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="campus" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="campus">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/School interior.jpeg" alt="Classrooms">
                         <div class="gallery-overlay">
@@ -367,7 +373,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="campus" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="campus">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Ground.jpeg" alt="Playground">
                         <div class="gallery-overlay">
@@ -377,7 +383,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="campus" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="campus">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Staff.jpeg" alt="Our Faculty">
                         <div class="gallery-overlay">
@@ -387,7 +393,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="campus" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="campus">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Correspondent.jpeg" alt="Leadership">
                         <div class="gallery-overlay">
@@ -398,7 +404,7 @@
                 </div>
 
                 <!-- Events -->
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Function 1.jpeg" alt="Annual Day">
                         <div class="gallery-overlay">
@@ -408,7 +414,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/function.jpeg" alt="Cultural Event">
                         <div class="gallery-overlay">
@@ -418,7 +424,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/MOC.jpeg" alt="Pearls Day">
                         <div class="gallery-overlay">
@@ -428,7 +434,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Diwali celebration.jpeg" alt="Diwali">
                         <div class="gallery-overlay">
@@ -438,7 +444,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Navarathri -1.jpeg" alt="Navarathri">
                         <div class="gallery-overlay">
@@ -448,7 +454,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Navarathri-2.jpeg" alt="Golu">
                         <div class="gallery-overlay">
@@ -458,7 +464,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Navarathri-3.jpeg" alt="Navarathri Pooja">
                         <div class="gallery-overlay">
@@ -468,7 +474,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Kamarajar bdy.jpeg" alt="Kamarajar BDY">
                         <div class="gallery-overlay">
@@ -478,7 +484,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Indepndence 2.jpeg" alt="Independence Parade">
                         <div class="gallery-overlay">
@@ -488,7 +494,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="events" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="events">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Independenc day 1.jpeg" alt="Flag Hoisting">
                         <div class="gallery-overlay">
@@ -499,7 +505,7 @@
                 </div>
 
                 <!-- Scouts & NCC -->
-                <div class="gallery-item-wrapper" data-category="scouts" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="scouts">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/scout.jpeg" alt="Scouts">
                         <div class="gallery-overlay">
@@ -509,7 +515,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="scouts" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="scouts">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Small scout.jpeg" alt="Junior Scouts">
                         <div class="gallery-overlay">
@@ -519,7 +525,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="scouts" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="scouts">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/School ncc.jpeg" alt="NCC">
                         <div class="gallery-overlay">
@@ -530,7 +536,7 @@
                 </div>
 
                 <!-- Field Trips -->
-                <div class="gallery-item-wrapper" data-category="field-trips" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="field-trips">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/IV - 2.jpeg" alt="Waterfall Trip">
                         <div class="gallery-overlay">
@@ -540,7 +546,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="field-trips" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="field-trips">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/IV-3.jpeg" alt="Temple Excursion">
                         <div class="gallery-overlay">
@@ -550,7 +556,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="field-trips" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="field-trips">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/WhatsApp Image 2026-03-16 at 10.55.52 AM.jpeg" alt="Group Excursion">
                         <div class="gallery-overlay">
@@ -561,7 +567,7 @@
                 </div>
 
                 <!-- Achievements -->
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/award1.jpeg" alt="District Award">
                         <div class="gallery-overlay">
@@ -571,7 +577,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/award2.jpeg" alt="Excellence Trophy">
                         <div class="gallery-overlay">
@@ -581,7 +587,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/award3.jpeg" alt="Achievement">
                         <div class="gallery-overlay">
@@ -591,7 +597,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/award4.jpeg" alt="Sports Shield">
                         <div class="gallery-overlay">
@@ -601,7 +607,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Student award.jpeg" alt="Winners">
                         <div class="gallery-overlay">
@@ -611,7 +617,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/Winning moment.jpeg" alt="Victory Moment">
                         <div class="gallery-overlay">
@@ -621,7 +627,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/winning_moment2.jpeg" alt="Celebration">
                         <div class="gallery-overlay">
@@ -631,7 +637,7 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="achievements" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="achievements">
                     <div class="gallery-item cursor-pointer">
                         <img src="images/good mark.jpeg" alt="Academic Excellence">
                         <div class="gallery-overlay">
@@ -642,9 +648,9 @@
                 </div>
 
                 <!-- Videos -->
-                <div class="gallery-item-wrapper" data-category="videos" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="videos">
                     <div class="gallery-item cursor-pointer group" onclick="openVideo('videos/Sportday video.mp4')">
-                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="w-full aspect-video object-cover">
                             <source src="videos/Sportday video.mp4" type="video/mp4">
                         </video>
                         <div class="video-play-indicator">
@@ -657,9 +663,9 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="videos" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="videos">
                     <div class="gallery-item cursor-pointer group" onclick="openVideo('videos/indepenced day.mp4')">
-                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="w-full aspect-video object-cover">
                             <source src="videos/indepenced day.mp4" type="video/mp4">
                         </video>
                         <div class="video-play-indicator">
@@ -672,9 +678,9 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="videos" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="videos">
                     <div class="gallery-item cursor-pointer group" onclick="openVideo('videos/science expition.mp4')">
-                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="w-full aspect-video object-cover">
                             <source src="videos/science expition.mp4" type="video/mp4">
                         </video>
                         <div class="video-play-indicator">
@@ -687,9 +693,9 @@
                     </div>
                 </div>
 
-                <div class="gallery-item-wrapper" data-category="videos" data-aos="fade-up">
+                <div class="gallery-item-wrapper" data-category="videos">
                     <div class="gallery-item cursor-pointer group" onclick="openVideo('videos/sports day 2.mp4')">
-                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+                        <video muted loop onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" class="w-full aspect-video object-cover">
                             <source src="videos/sports day 2.mp4" type="video/mp4">
                         </video>
                         <div class="video-play-indicator">
@@ -818,6 +824,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+        window.addEventListener('DOMContentLoaded', () => filterGallery('all'));
 
         // --- Gallery Filtering ---
         function filterGallery(category) {
