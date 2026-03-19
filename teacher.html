@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Teachers | Kamarajar Nursery and Middle School</title>
+    <link rel="icon" type="image/jpeg" href="images/school logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#1e3a8a', secondary: '#3b82f6', accent: '#f59e0b' },
+                    fontFamily: { outfit: ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .bg-gradient-school {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+
+        .teacher-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .teacher-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(30, 58, 138, 0.4) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .teacher-card:hover .teacher-image-container::after {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-3 no-underline group">
+                        <div
+                            class="w-12 h-12 rounded-full overflow-hidden bg-white shadow-md border border-gray-100 group-hover:scale-110 transition-transform">
+                            <img src="images/school logo.jpeg" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div class="text-2xl font-bold text-primary">
+                            Kamarajar<span class="text-secondary text-sm block font-medium">Nursery & Primary
+                                School</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="index.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">Home</a>
+                    <a href="about.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">About Us</a>
+                    <a href="admissions.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">Admissions</a>
+                    <a href="facilities.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">Facilities</a>
+                    <a href="activities.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">Activities</a>
+                    <a href="teacher.html" class="text-primary transition-colors font-bold no-underline">Teachers</a>
+                    <a href="gallery.html"
+                        class="text-gray-700 hover:text-primary transition-colors font-medium no-underline">Gallery</a>
+                    <a href="contact.html"
+                        class="px-6 py-2 bg-primary text-white rounded-full hover:bg-secondary transition-all shadow-lg hover:shadow-primary/30 no-underline">Contact
+                        Us</a>
+
+                </div>
+                <div class="lg:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-gray-600 hover:text-primary transition-colors">
+                        <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Tray -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-white border-t border-gray-100 px-4 pt-4 pb-8 space-y-4 shadow-xl">
+            <a href="index.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">Home</a>
+            <a href="about.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">About
+                Us</a>
+            <a href="admissions.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">Admissions</a>
+            <a href="facilities.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">Facilities</a>
+            <a href="activities.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">Activities</a>
+            <a href="teacher.html"
+                class="block text-primary transition-colors font-bold no-underline py-2 border-b border-gray-50">Teachers</a>
+            <a href="gallery.html"
+                class="block text-gray-700 hover:text-primary transition-colors font-medium no-underline py-2 border-b border-gray-50">Gallery</a>
+            <a href="contact.html"
+                class="block px-6 py-3 bg-primary text-white rounded-xl hover:bg-secondary transition-all text-center no-underline font-bold">Contact
+                Us</a>
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-gradient-school text-white overflow-hidden relative">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-3/5 text-center md:text-left">
+                    <h1 class="text-3xl md:text-6xl font-bold mb-6" data-aos="fade-right">Our Dedicated Faculty</h1>
+                    <p class="text-xl opacity-90 max-w-2xl" data-aos="fade-right" data-aos-delay="100">Meet the
+                        passionate educators and mentors who shape the future of our students with care and excellence.
+                    </p>
+                </div>
+                <div class="md:w-2/5 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="200">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent to-secondary rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                        </div>
+                        <div
+                            class="relative w-64 h-64 md:w-80 md:h-80 bg-white rounded-full p-6 shadow-2xl flex items-center justify-center border-4 border-white/20">
+                            <img src="images/school logo.jpeg" alt="School Logo" class="w-full h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- Teachers Grid -->
+    <section class="py-24">
+        <div class="container mx-auto px-4">
+
+            <!-- Leadership Team -->
+            <div class="mb-20">
+                <div class="text-center mb-16">
+                    <span class="text-accent font-bold tracking-widest uppercase text-sm"
+                        data-aos="fade-up">Leadership</span>
+                    <h2 class="text-3xl font-bold text-primary mt-4" data-aos="fade-up" data-aos-delay="100">School
+                        Mentors</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                    <!-- Correspondent -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="images/Correspondent.jpeg" alt="Our Correspondent"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-accent text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Correspondent</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">Mr.L.Manimaran </h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">B.A(ENG),B.Ed DCE.,D.EI.Ed</p>
+                        </div>
+                    </div>
+
+                    <!-- Principal -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/Janaki .jpeg" alt="M. Janaki"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Principal</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Janaki</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">M.com, B. Ed, P.G.D.C.A.,
+                                D.O.M.</p>
+                        </div>
+                    </div>
+
+                    <!-- Vice Principal -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/lakshmipriya.jpeg" alt="M. Lakshmipriya"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Vice Principal</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Lakshmipriya</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">B.Sc., B.Ed., D.El.Ed.</p>
+                        </div>
+                    </div>
+
+                    <!-- AHM -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/sivasakthi.jpeg" alt="M. Sivasakthi"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                AHM</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Sivasakthi</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">M.A., D.T.Ed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teaching Faculty -->
+            <div>
+                <div class="text-center mb-16">
+                    <span class="text-accent font-bold tracking-widest uppercase text-sm" data-aos="fade-up">Our
+                        Faculty</span>
+                    <h2 class="text-3xl font-bold text-primary mt-4" data-aos="fade-up" data-aos-delay="100">Assistant
+                        Teachers</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Teacher 1 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/ponmalar saithanya.jpeg" alt="M. Ponmalar Saithanya"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Ponmalar Saithanya</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">B.A., B.Ed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 2 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/maheswari.jpeg" alt="T. Maheswari"
+                                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">T. Maheswari</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">D.El.Ed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 3 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/selvalakshmi.jpeg" alt="S. Selvalakshmi"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">S. Selvalakshmi</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">DPPE.</p>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 4 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/kaleeswari.jpeg" alt="M. Kaleeswari"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Kaleeswari</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">B.A., B.Ed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 5 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/deepika.jpeg" alt="R. Deepika"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">R. Deepika</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">DECE.</p>
+                        </div>
+                    </div>
+
+                    <!-- Teacher 6 -->
+                    <div class="teacher-card group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-gray-100 w-full"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="teacher-image-container relative aspect-[4/5] overflow-hidden">
+                            <img src="teachers/valli.jpeg" alt="M. Valli"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div
+                                class="absolute top-6 right-6 bg-primary text-white px-6 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                                Asst. Teacher</div>
+                        </div>
+                        <div class="p-8 text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-2">M. Valli</h3>
+                            <p class="text-secondary font-medium text-sm leading-relaxed">D.El.Ed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-white/5">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 rounded-full overflow-hidden bg-white p-1">
+                            <img src="images/school logo.jpeg" alt="Logo" class="w-full h-full object-contain">
+                        </div>
+                        <span class="text-2xl font-bold italic text-white">Kamarajar<br><span
+                                class="text-sm block font-medium text-blue-300">Nursery & Middle School</span></span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed italic">Empowering minds and shaping futures with love,
+                        wisdom, and service since 1981.</p>
+                </div>
+                <!-- Links -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold text-white border-l-4 border-accent pl-4">Quick Links</h4>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="about.html" class="text-gray-400 hover:text-white transition-colors no-underline">About
+                            Us</a>
+                        <a href="facilities.html"
+                            class="text-gray-400 hover:text-white transition-colors no-underline">Facilities</a>
+                        <a href="activities.html"
+                            class="text-gray-400 hover:text-white transition-colors no-underline">Activities</a>
+                        <a href="teacher.html"
+                            class="text-gray-400 hover:text-white transition-colors no-underline">Teachers</a>
+                        <a href="gallery.html"
+                            class="text-gray-400 hover:text-white transition-colors no-underline">Gallery</a>
+                        <a href="contact.html"
+                            class="text-gray-400 hover:text-white transition-colors no-underline">Contact</a>
+                    </div>
+                </div>
+                <!-- Contact -->
+                <div class="space-y-6">
+                    <h4 class="text-xl font-bold text-white border-l-4 border-accent pl-4">Contact Details</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 text-gray-400">
+                            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-accent">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <span>+91 70100 29263</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-400">
+                            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-accent">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="text-xs md:text-sm flex flex-col break-words min-w-0">
+                                <a href="mailto:manimaran678@gmail.com"
+                                    class="hover:text-white transition-colors no-underline break-words">manimaran678@gmail.com</a>
+                                <a href="mailto:kamarajarmazhalaiarprimaryschool@yahoo.com"
+                                    class="hover:text-white transition-colors no-underline break-words">kamarajarmazhalaiarprimaryschool@yahoo.com</a>
+                            </div>
+                        </div>
+                        <a href="https://www.google.com/maps/search/?api=1&query=kamarajar+Mazhalaiar+primary+school+Muhavoor+2,13+Aathi+Dravider+Vannar+Street+Muhavoor+Tamil+Nadu+626111"
+                            target="_blank"
+                            class="flex items-center gap-4 text-gray-400 no-underline hover:text-white transition-colors">
+                            <div class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-accent">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <span>2,13 Aathi Dravider, Vannar Street, Muhavoor, Tamil Nadu 626111</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2026 Kamarajar Nursery and Middle School. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+
+</html>
